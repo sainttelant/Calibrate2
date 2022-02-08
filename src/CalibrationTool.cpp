@@ -931,7 +931,9 @@ namespace UcitCalibrate
 			cv::Mat radar_Dis = Mat::ones(4, 1, cv::DataType<double>::type);
 			Distance_W4.at<double>(0, 0) = temp.X;
 			Distance_W4.at<double>(1, 0) = temp.Y;
-			Distance_W4.at<double>(2, 0) = temp.Altitude;
+			//Distance_W4.at<double>(2, 0) = temp.Altitude;
+
+			Distance_W4.at<double>(2, 0) = m_radarheight;
 			Distance_W4.at<double>(3, 0) = 0;
 			radar_Dis = m_RadarRT.inv() * Distance_W4;
 			m_gpsworldcoord.X = radar_Dis.at<double>(0, 0);
@@ -991,7 +993,7 @@ namespace UcitCalibrate
 			tmpPoint.y = m_gpsworlds[i].Y;
 			// 预估测量高度为1.2f
 			tmpPoint.z = m_gpsworlds[i].Altitude;
-			
+			//tmpPoint.z = m_radarheight;
 			m_worldBoxPoints.push_back(tmpPoint);
 		}
 	

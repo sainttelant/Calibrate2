@@ -422,7 +422,7 @@ int main(int argc, char* argv[])
 	
 
 		m_Calibrations.SetCoordinateOriginPoint(originallpoll.longtitude, originallpoll.latitude);
-		m_Calibrations.SetRadarHeight(0);
+		m_Calibrations.SetRadarHeight(reflectorheight);
 
 #endif
 	
@@ -696,7 +696,7 @@ int main(int argc, char* argv[])
 	cv::Mat tvec1(3, 1, cv::DataType<double>::type);  //平移向量
 
 	//m_Calibrations.SetRadarHeight(reflectorheight);
-	m_Calibrations.SetRadarHeight(0);
+	m_Calibrations.SetRadarHeight(reflectorheight);
 	m_Calibrations.SetCoordinateOriginPoint(originallpoll.longtitude, originallpoll.latitude);
 
 #ifndef calibrateradar
